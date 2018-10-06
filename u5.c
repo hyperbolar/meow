@@ -69,3 +69,73 @@ int main(void)
 }
 
 //exercise 5-4
+
+#include <stdio.h>
+#define INDEXMAX 7
+
+int main(void)
+{
+	int i;
+	int val[INDEXMAX];
+
+	for (i = 0; i < INDEXMAX; i++) {
+		printf("value %d: ", i);
+		scanf_s("%d", &val[i]);
+	}
+
+	for (i = 0; i < INDEXMAX; i++) {
+		printf("Value %d: %d\n", i, val[i]);
+	}
+
+	puts("Reversed Now...");
+
+	for (i = 0; i < INDEXMAX / 2; i++) {
+		int temp = val[i];
+		val[i] = val[INDEXMAX - 1 - i];
+		val[i] = temp;
+	}
+
+	for (i = 0; i < INDEXMAX; i++) {
+		printf("val[%d] = %d\n", i, val[i]);
+	}
+
+	return 0;
+}
+
+//exercise 5-5
+
+#include <stdio.h>
+
+int main(void)
+{
+	int a;
+	double b;
+	a = b = 1.5;
+	printf("a = %d\nb = %.1f", a, b);
+
+	return 0;
+}
+//output[ a = 1; b = 1.5]
+//exercise 5-6
+
+#include <stdio.h>
+#define DATAAMOUNT 4
+int main(void)
+{
+	int arrValSet[DATAAMOUNT];
+	for (int i = 0; i < DATAAMOUNT; i++) {
+		printf("No.%d = ", i + 1);
+		scanf_s("%d", &arrValSet[i]);
+	}
+
+	printf("(%d,", arrValSet[0]);
+	for (int i = 1; i < DATAAMOUNT - 1; i++) {
+		printf(" %d,", arrValSet[i]);
+	}
+	printf(" %d)", arrValSet[DATAAMOUNT - 1]);
+
+	return 0;
+}
+
+//exercise 5-7
+
